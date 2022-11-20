@@ -11,6 +11,9 @@ module.exports = {
         xl: '1280px',
         xxl: '1536px'
       },
+      boxShadow: {
+        '3xl': '0px 5px 150px 0px rgba(0, 0, 0, 0.3)',
+      },
       colors:{
         primary: '#6d9ffc',
       },
