@@ -12,21 +12,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
+exports.message = exports.transporter = void 0;
+const nodemailer_1 = __importDefault(require("nodemailer"));
 require('dotenv').config();
-const { USER_DB, PASSWORD_DB, CLUSTER } = process.env;
-const NEWLINK = `mongodb+srv://${USER_DB}:${PASSWORD_DB}@${CLUSTER}.wknn4vi.mongodb.net/?retryWrites=true&w=majority`;
-function databaseConnection() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            console.log(USER_DB);
-            const connectionToDatabase = yield mongoose_1.default.connect(NEWLINK);
-            console.log('Server is connected. Welcome!');
-        }
-        catch (error) {
-            console.log(error);
+const { USER_MAIL, PASSWORD_MAIL } = process.env;
+const transporter = () => __awaiter(void 0, void 0, void 0, function* () {
+    const newTransport = nodemailer_1.default.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: USER_MAIL,
+            pass: PASSWORD_MAIL
         }
     });
-}
-databaseConnection();
-exports.default = databaseConnection;
+    return newTransport;
+});
+exports.transporter = transporter;
+const message = (email) => __awaiter(void 0, void 0, void 0, function* () {
+    const transport = yield (0, exports.transporter)();
+    const sending = transport.sendMail({
+        from: USER_MAIL,
+        to: USER_MAIL,
+        subject: email.subject,
+        text: `'Hola Agustin, recibiste un mensaje de ${email.name}. ${email.body}'`
+    });
+    return;
+});
+exports.message = message;

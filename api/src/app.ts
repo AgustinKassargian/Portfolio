@@ -23,7 +23,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-app.set("port", process.env.PORT || 3000)
+app.set("port", process.env.PORT || 3001)
 
 app.use("/api", routes);
 
