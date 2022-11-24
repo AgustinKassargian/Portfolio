@@ -10,6 +10,9 @@ interface IStyles{
     cardText:string
     iconsBox: string
     iconsContainer: string
+    inputs: string
+    textarea:string
+    buttonForm: string
     
 }
 
@@ -26,6 +29,9 @@ export const styles : IStyles = {
     iconsBox: 'h-full w-[50%] flex flex-col items-center justify-between pt-[2.50%] pb-[2.50%] ',
     button:'w-[120%] hover:bg-slate-200 hover:text-primary transition ease-in-out delay-50 hover:scale-125 duration-300  hover:border-2 hover:boder-slate-200 rounded-lg h-1/2',
     scroll_container:'h-full border-2 border-blue-700 scroll-smooth',
-    a:''
+    a:'',
+    inputs:'p-2 w-full h-10 text-white placeholder-slate-200 text-xl bg-primary border-solid border-4 rounded-xl border-slate-200 placeholder:italic mb-2',
+    textarea:'p-2 w-full h-80 justify-start text-white placeholder-slate-200 text-xl bg-primary border-solid border-4 rounded-xl border-slate-200 placeholder:italic mb-2',
+    buttonForm:'border-4 w-[20%]  border-slate-200 rounded-xl text-slate-200 text-xl hover:bg-slate-200 hover:text-primary duration-300'
 
 }

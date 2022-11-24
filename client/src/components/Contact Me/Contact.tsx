@@ -1,8 +1,20 @@
-
+import { useForm, SubmitHandler } from "react-hook-form";
+import { toast,ToastContainer} from "react-toastify";
 
 import { styles } from "../Styles";
-
+import 'react-toastify/dist/ReactToastify.css';
 export default function Contact(){
+    type Inputs = {
+        name : string,
+        subject: string,
+        body: string
+    }
+
+    const {register, handleSubmit, formState:{ errors }} = useForm<Inputs>()
+
+    const onSubmit : SubmitHandler<Inputs> = data => console.log(data)
+
+
     return(
         <div id="contact" className="h-1/6 pt-2 ">
             <h3 className={styles.subtitle}>How to Contact Me?</h3>
@@ -28,18 +40,35 @@ export default function Contact(){
                 </div>
                 <div className="flex-col w-[50%] ">{/*MailBox */}
                     <div className="flex-col bg-primary rounded-2xl h-full w-[87.4%]">
-                        <form className="p-[5%]">
-                        <input className='p-2 w-full h-10 text-white placeholder-slate-200 text-xl bg-primary border-solid border-4 rounded-xl border-slate-200 placeholder:italic mb-2' type='text' placeholder='Name'/>
-                        <br/>
-                        <input className='p-2 w-full h-10 text-white placeholder-slate-200 text-xl bg-primary border-solid border-4 rounded-xl border-slate-200 placeholder:italic mb-2' type='text' placeholder='Affair'/>
-                        <br/>
-                        <textarea className='p-2 w-full h-80 justify-start text-white placeholder-slate-200 text-xl bg-primary border-solid border-4 rounded-xl border-slate-200 placeholder:italic mb-2' placeholder='Body'/>
-                        <br/>
-                        <button className='border-4 w-[20%]  border-slate-200 rounded-xl text-slate-200 text-xl hover:bg-slate-200 hover:text-primary duration-300'>Send</button>
+                        <form className="p-[5%]" onSubmit={handleSubmit(onSubmit)}>
+                            <input className={styles.inputs} type='text' placeholder='Name'
+                                {...register('name',{
+                                        required:true,
+                                        minLength:3,
+                                        maxLength:12
+                                    })}
+                            />
+                            <br/>
+                            <input className={styles.inputs} type='text' placeholder='Subject'
+                                {...register('subject',{
+                                    required:true,
+                                    minLength:3,
+                                    maxLength:12
+                                })}
+                            />
+                            <br/>
+                            <textarea className={styles.textarea} placeholder='Body'
+                                {...register('body',{
+                                    required:true,
+                                    minLength: 20,
+                                    maxLength:200
+                                })}
+                            />
+                            <br/>
+                            <button className={styles.buttonForm}>
+                                Send</button>
                         </form>
                     </div>
-                    
-                
                 </div>
             </div>
         </div>
