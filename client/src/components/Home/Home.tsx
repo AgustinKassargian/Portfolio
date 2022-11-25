@@ -2,11 +2,8 @@ import React from 'react';
 //import styles from './Home.module.css'
 import NavBar from '../NavBar/NavBar';
 import AboutMe from '../About Me/About'
-import Knowledges from '../Knowledges/Knowledges';
-import Tools from '../Tools/Tools';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact Me/Contact';
-import Carousel from '../Carousel';
 import SkillsAndKnowledges from '../SkillsAndKnowledges/SkillsAndKnowledges';
 
 function Home(){

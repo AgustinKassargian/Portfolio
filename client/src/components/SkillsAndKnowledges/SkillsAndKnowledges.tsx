@@ -7,7 +7,7 @@ function SkillsAndKnowledges(){
         <div id='skills&kwonledges' className='pt-2'>
             <h3 className={styles.subtitle}>Skills & Knowledges</h3>
             <div className='ml-[2.5%] w-[95%] h-[80vh] flex justify-around'>{/* Contenedor*/}
-                <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#001D6E] h-[90%] p-7'>{/* Caja databases  #009efd // #009cfd84 */}
+                <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#44cfca] h-[90%] p-7'>{/* Caja databases  #009efd // #009cfd84 */}
                     <h4 className={styles.cardTitle}>Database Skills</h4>
                     <p className={styles.cardText}>
                         Experience with Sequelize an Non-Sequelize databases like PostgreSQL and MongoDb
@@ -23,7 +23,7 @@ function SkillsAndKnowledges(){
                         </div>
                     </div>
                 </div>
-                <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#189BFA] h-[90%] p-7'>{/* Caja backend #0097c5 // ##0097c587  */}
+                <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#494fc1] h-[90%] p-7'>{/* Caja backend #0097c5 // ##0097c587  */}
                     <h4 className={styles.cardTitle}>Backend Skills</h4>
                     <p className={styles.cardText}> Knowledges and practices with Node.js and Express, working with tools like Nodemailer and Cloudinary</p>
                     <div className={styles.iconsContainer}>
@@ -37,7 +37,7 @@ function SkillsAndKnowledges(){
                         </div>
                     </div>
                 </div>
-                <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#330033]  h-[90%] p-7'>{/* Caja frontend  #4813d0 // #4913d082 */}
+                <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#fd084a]  h-[90%] p-7'>{/* Caja frontend  #4813d0 // #4913d082 */}
                     <h4 className={styles.cardTitle}>Frontend Skills</h4>
                     <p className={styles.cardText}>Proficiency developing frontend using React, connecting with Redux, and providing styles with                                                                                    CSS and Tailwind</p>
                     <div className={styles.iconsContainer}>

@@ -1,5 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { toast,ToastContainer} from "react-toastify";
+// import { toast,ToastContainer} from "react-toastify";
+// import { ErrorMessage } from "@hookform/error-message";
 
 import { styles } from "../Styles";
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,7 +17,7 @@ export default function Contact(){
 
 
     return(
-        <div id="contact" className="h-1/6 pt-2 ">
+        <div id="contact" className="h-[18%] pt-2 ">
             <h3 className={styles.subtitle}>How to Contact Me?</h3>
             <div className="flex justify-center mt-10 w-full h-5/6">{/* Contenedor*/}
                 <div className="w-[50%] ">
@@ -39,16 +40,42 @@ export default function Contact(){
                     </div>
                 </div>
                 <div className="flex-col w-[50%] ">{/*MailBox */}
-                    <div className="flex-col bg-primary rounded-2xl h-full w-[87.4%]">
-                        <form className="p-[5%]" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="flex-col bg-primary rounded-2xl h-full w-[86.6%]">
+                        <form className="p-[3%]" onSubmit={handleSubmit(onSubmit)}>
+                            <div className="text-slate-200">
+                            {errors?.name && errors.name.type === "required"?
+                                <p >*This field is required</p>
+                                :
+                                errors.name?.type === 'minLength' ?
+                                    <p>*This field require at least 3 characters</p>
+                                    :
+                                    errors.name?.type === 'maxLength' ? <p>*Maximun 5 characters</p>
+                                        :
+                                        <br/>}
+                                        </div>
+                            
                             <input className={styles.inputs} type='text' placeholder='Name'
                                 {...register('name',{
                                         required:true,
                                         minLength:3,
-                                        maxLength:12
+                                        maxLength:5
                                     })}
-                            />
+                                    />
+                                    
                             <br/>
+                            <div className="text-slate-200">
+                            {errors?.subject && errors?.subject.type === 'required' ?
+                                <>*This field is required</>
+                                :
+                                errors?.subject?.type === 'minLength' ?
+                                    <>*This field require at least 3 characters</>
+                                    :
+                                    errors?.subject?.type === 'maxLength' ?
+                                        <>*Maximun 12 characters</>
+                                        :
+                                        <br/>
+                        }
+                            </div>
                             <input className={styles.inputs} type='text' placeholder='Subject'
                                 {...register('subject',{
                                     required:true,
@@ -57,6 +84,19 @@ export default function Contact(){
                                 })}
                             />
                             <br/>
+                            <div className="text-slate-200">
+                            {errors?.body && errors?.body?.type === "required" ?
+                                <p>*This field is required</p>
+                                :
+                                errors?.body?.type === "minLength" ?
+                                    <p>*This field require at least 20 characters</p>
+                                    :
+                                    errors?.body?.type === "maxLength" ?
+                                        <p>*Maximun 200 characters</p>
+                                        :
+                                        <br/>
+                            }
+                            </div>
                             <textarea className={styles.textarea} placeholder='Body'
                                 {...register('body',{
                                     required:true,
@@ -65,8 +105,7 @@ export default function Contact(){
                                 })}
                             />
                             <br/>
-                            <button className={styles.buttonForm}>
-                                Send</button>
+                            <button className={styles.buttonForm}>Send</button>
                         </form>
                     </div>
                 </div>
