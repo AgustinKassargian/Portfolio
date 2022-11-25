@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer'
 
-import {IMail} from './mail.interface'
 
 require('dotenv').config()
 
