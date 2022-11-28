@@ -1,23 +1,27 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-// import { toast,ToastContainer} from "react-toastify";
-// import { ErrorMessage } from "@hookform/error-message";
+import { useAppDispatch } from "../Redux/hooks";
+import { sendEmail } from "../Redux/slices";
 
 import { styles } from "../Styles";
-import 'react-toastify/dist/ReactToastify.css';
+
+
+export type Inputs = {
+      name : string,
+      subject: string,
+      body: string
+  }
+
 export default function Contact(){
-    type Inputs = {
-        name : string,
-        subject: string,
-        body: string
-    }
+
+  const dispatch = useAppDispatch()
 
     const {register, handleSubmit, formState:{ errors }} = useForm<Inputs>()
 
-    const onSubmit : SubmitHandler<Inputs> = data => console.log(data)
+    const onSubmit : SubmitHandler<Inputs> = data => dispatch(sendEmail(data))
 
 
     return(
-        <div id="contact" className="h-[18%] pt-2 ">
+        <div id="contact" className="h-[18%] pt-2">
             <h3 className={styles.subtitle}>How to Contact Me?</h3>
             <div className="flex justify-center mt-10 w-full h-5/6">{/* Contenedor*/}
                 <div className="w-[50%] ">
@@ -42,7 +46,7 @@ export default function Contact(){
                 <div className="flex-col w-[50%] ">{/*MailBox */}
                     <div className="flex-col bg-primary rounded-2xl h-full w-[86.6%]">
                         <form className="p-[3%]" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="text-slate-200">
+                            <div className="text-orange-400 font-bold">
                             {errors?.name && errors.name.type === "required"?
                                 <p >*This field is required</p>
                                 :
@@ -58,12 +62,12 @@ export default function Contact(){
                                 {...register('name',{
                                         required:true,
                                         minLength:3,
-                                        maxLength:5
+                                        maxLength:12
                                     })}
                                     />
                                     
                             <br/>
-                            <div className="text-slate-200">
+                            <div className="text-orange-400 font-bold">
                             {errors?.subject && errors?.subject.type === 'required' ?
                                 <>*This field is required</>
                                 :
@@ -84,9 +88,9 @@ export default function Contact(){
                                 })}
                             />
                             <br/>
-                            <div className="text-slate-200">
+                            <div className="text-orange-400 font-bold">
                             {errors?.body && errors?.body?.type === "required" ?
-                                <p>*This field is required</p>
+                                <p><span className="mb-2">⚠️</span> This field is required</p>
                                 :
                                 errors?.body?.type === "minLength" ?
                                     <p>*This field require at least 20 characters</p>

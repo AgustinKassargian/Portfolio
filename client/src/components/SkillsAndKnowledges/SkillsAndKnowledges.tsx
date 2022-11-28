@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
 import { styles } from '../Styles'
-
 
 function SkillsAndKnowledges(){
     return(
