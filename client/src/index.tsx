@@ -3,9 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux/es/exports';
 
+import { Provider } from 'react-redux/es/exports';
 import store from './components/Redux/store';
+
+import {I18nextProvider} from 'react-i18next'
+import i18next from 'i18next';
+
+import global_en from "./translations/en/global.json"
+import global_es from "./translations/es/global.json"
+
+i18next.init({
+  interpolation: {escapeValue: false},
+  lng:"en",
+  resources:{
+    es:{
+      global: global_es
+    },
+    en:{
+      global: global_en
+    }
+  }
+})
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +32,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store = {store} >
-      <App />
+      <I18nextProvider i18n={i18next}>
+        <App />
+      </I18nextProvider>
     </Provider>
   </React.StrictMode>
 );

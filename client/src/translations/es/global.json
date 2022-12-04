@@ -1,0 +1,49 @@
+{
+  "home":{
+    "title": "Hola! Soy Agustin.",
+    "subtitle_1": "Full Stack Web Developer",
+    "subtitle_and":"y",
+    "subtitle_2":"Web Designer"
+  },
+
+  "navBar":{
+    "button_1": "Hola!",
+    "button_2": "Sobre Mi",
+    "button_3": "Conocimientos y Habilidades",
+    "button_4": "Proyectos",
+    "button_5": "Contacto"
+
+  },
+
+  "about":{
+    "title":"Sobre Mi",
+    "line_1":"Soy de Buenos Aires, Argentina. Sueño con viajar por el mundo y mejorar la vida de las personas a través de la tecnología.",
+    "line_2":"Me gusta aprender y enseñar lo que pueda, y disfruto el trabajo en equipo, contribuyendo con ideas 💡, soluciones 💪 y buena energía ⚡️",
+    "line_3":"Recientemente lideré el desarrollo de una aplicación similar a un Comercio Online. Como Desarrollador Fullstack tome parte trabajando en Backend como Frontend, pero tambien organizando y enfocando al equipo para alcanzar nuestros objetivos mediante la metodología ágil SCRUM.",
+    "line_4":"Si quieres conocerme más,",
+    "line_5":"puedes cliquear aquí para saber que piensan mis compañeros sobre mi."
+  },
+
+  "s&k":{
+    "title": "Conocimientos y Habilidades",
+    "cardTitle_1":"Conocimientos en Base de Datos",
+    "cardTitle_2":"Conocimientos en Backend",
+    "cardTitle_3":"Conocimientos en Frontend",
+    "cardText_1":"Experiencia con bases de datos relacionales y no relacionales, como PostgreSQL y MongoDB",
+    "cardText_2":"Conocimientos y practicas de Node.js y Express, trabajando con herramientas como Nodemailer y Cloudinary",
+    "cardText_3":"Proficiencia desarrollando front-end utilizando React, conectándolo con Redux y proveyendo estilos con CSS y Tailwind"
+  },
+
+  "contact":{
+    "title": "Como Contactarme?",
+    "text":"Si te interesa contactarte conmigo, puedes enviarme un mail completando el siguiente formulario. También puedes escribirme por las siguientes redes sociales. Que tengas un buen día!",
+    "placeholder_email":"email",
+    "placeholder_subject":"subject",
+    "placeholder_body":"Leave your message here",
+    "send": "Enviar"
+  }
+
+
+
+
+}

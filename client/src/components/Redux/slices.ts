@@ -3,13 +3,13 @@ import axios from "axios"
 import {Inputs} from '../Contact Me/Contact'
 
 interface mailState{
-    name: string,
+    email: string,
     subject: string,
     body: string
 }
 
 const initialState : mailState ={
-    name:'',
+    email:'',
     subject:'',
     body:''
 }

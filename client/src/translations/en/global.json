@@ -1,0 +1,47 @@
+{
+  "home":{
+    "title": "Hi! I'm Agustin.",
+    "subtitle_1": "Full Stack Web Developer",
+    "subtitle_and":"&",
+    "subtitle_2":"Web Designer"
+  },
+
+  "navBar":{
+    "button_1": "Hi!",
+    "button_2": "About Me",
+    "button_3": "Skills & Knowledges",
+    "button_4": "Projects",
+    "button_5": "Contact Me"
+
+  },
+
+  "about":{
+    "title":"About Me",
+    "line_1":"I'm from Buenos Aires, Argentina. I dream with travel around the world and improve people's lives through technology.",
+    "line_2":"I like learn and teach what I can and enjoy teamwork, contributting with ideas 💡, solutions 💪 and goods vibes ⚡️",
+    "line_3":"Recently I led the development of an application similar to an Ecommerce. Like Fullstack Developer I take part working at Backend and Frontend, but too organizing and focusing the team to reach our goals using the agile methodology Scrum.",
+    "line_4":"If you want to know me more,",
+    "line_5":"can click here to see what my partners think about me."
+  },
+
+  "s&k":{
+    "title": "Skills & Knowledges",
+    "cardTitle_1":"Database Skills",
+    "cardTitle_2":"Backend Skills",
+    "cardTitle_3":"Frontend Skills",
+    "cardText_1":"Experience with Sequelize an Non-Sequelize databases like PostgreSQL and MongoDb",
+    "cardText_2":"Knowledges and practices with Node.js and Express, working with tools like Nodemailer and Cloudinary",
+    "cardText_3":"Proficiency developing frontend using React, connecting with Redux, and providing styles with CSS and Tailwind"
+  },
+
+  "contact":{
+    "title": "How to Contact Me?",
+    "text":"If you want to put in contact with me, you can send me an email filling the next form. Also, you can write by the following social medias. Have a nice day!",
+    "placeholder_email":"email",
+    "placeholder_subject":"subject",
+    "placeholder_body":"Leave your message here",
+    "send": "Send"
+  }
+
+
+}

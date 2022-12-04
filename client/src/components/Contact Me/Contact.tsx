@@ -2,31 +2,60 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { useAppDispatch } from "../Redux/hooks";
 import { sendEmail } from "../Redux/slices";
 
+import {useEffect} from 'react'
+
+import {useTranslation} from 'react-i18next'
+
+import swal from 'sweetalert'
 import { styles } from "../Styles";
 
 
 export type Inputs = {
-      name : string,
+      email : string,
       subject: string,
       body: string
   }
 
 export default function Contact(){
 
-  const dispatch = useAppDispatch()
+    const[t] = useTranslation("global")
 
-    const {register, handleSubmit, formState:{ errors }} = useForm<Inputs>()
+    const dispatch = useAppDispatch()
 
-    const onSubmit : SubmitHandler<Inputs> = data => dispatch(sendEmail(data))
+    const {
+        register,
+        handleSubmit,
+        formState,
+        formState:{ errors },
+        reset
+        } = useForm<Inputs>()
 
+    const onSubmit : SubmitHandler<Inputs> = data =>{
+        dispatch(sendEmail(data))
+        swal({
+            title: "Fantastic!",
+            text: "Mail sended successfully!",
+            icon: "success",
+            closeOnEsc:true,
+        })
+        } 
+
+    useEffect(()=>{
+        if(formState.isSubmitSuccessful){
+            reset({
+                email:'',
+                subject:'',
+                body:''})
+        }
+    },[formState, reset])
 
     return(
         <div id="contact" className="h-[18%] pt-2">
-            <h3 className={styles.subtitle}>How to Contact Me?</h3>
+            <h3 className={styles.subtitle}>{t('contact.title')}</h3>
             <div className="flex justify-center mt-10 w-full h-5/6">{/* Contenedor*/}
                 <div className="w-[50%] ">
                     <p className={styles.p}>
-                        If you want to put in contact with me, you can send me an email filling the next form. Also, you can write by the following social medias. Have a nice day!
+                       {t('contact.text')}
                     </p>
                     <div className="flex gap-14 justify-center items-center content-center w-[60%] ml-[20%] mt-[5%]"> {/* Caja de Links */}
                         <a className="justify-center" href="https://www.linkedin.com/in/agustin-kassargian/" target="blank">
@@ -47,25 +76,27 @@ export default function Contact(){
                     <div className="flex-col bg-primary rounded-2xl h-full w-[86.6%]">
                         <form className="p-[3%]" onSubmit={handleSubmit(onSubmit)}>
                             <div className="text-orange-400 font-bold">
-                            {errors?.name && errors.name.type === "required"?
+                            {errors?.email && errors.email.type === "required" ?
                                 <p >*This field is required</p>
                                 :
-                                errors.name?.type === 'minLength' ?
-                                    <p>*This field require at least 3 characters</p>
+                                errors?.email?.type === 'pattern'?
+                                    <p>*Invalid Email</p>
                                     :
-                                    errors.name?.type === 'maxLength' ? <p>*Maximun 5 characters</p>
+                                    errors.email?.type === 'minLength' ?
+                                        <p>* field require at least 5 characters</p>
                                         :
-                                        <br/>}
+                                        errors.email?.type === 'maxLength' ? <p>*Maximun 25 characters</p>
+                                            :
+                                            <br/>}
                                         </div>
-                            
-                            <input className={styles.inputs} type='text' placeholder='Name'
-                                {...register('name',{
+                            <input className={styles.inputs} type='text' placeholder='Email'
+                                {...register('email',{
+                                        pattern: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
                                         required:true,
-                                        minLength:3,
-                                        maxLength:12
+                                        minLength:5,
+                                        maxLength:40
                                     })}
-                                    />
-                                    
+                                    />    
                             <br/>
                             <div className="text-orange-400 font-bold">
                             {errors?.subject && errors?.subject.type === 'required' ?
@@ -75,16 +106,16 @@ export default function Contact(){
                                     <>*This field require at least 3 characters</>
                                     :
                                     errors?.subject?.type === 'maxLength' ?
-                                        <>*Maximun 12 characters</>
+                                        <>*Maximun 15 characters</>
                                         :
                                         <br/>
-                        }
+                            }
                             </div>
                             <input className={styles.inputs} type='text' placeholder='Subject'
                                 {...register('subject',{
                                     required:true,
                                     minLength:3,
-                                    maxLength:12
+                                    maxLength:15
                                 })}
                             />
                             <br/>
@@ -101,7 +132,7 @@ export default function Contact(){
                                         <br/>
                             }
                             </div>
-                            <textarea className={styles.textarea} placeholder='Body'
+                            <textarea className={styles.textarea} placeholder='Leave your message here'
                                 {...register('body',{
                                     required:true,
                                     minLength: 20,
@@ -109,7 +140,7 @@ export default function Contact(){
                                 })}
                             />
                             <br/>
-                            <button className={styles.buttonForm}>Send</button>
+                            <button className={styles.buttonForm}>{t('contact.send')}</button>
                         </form>
                     </div>
                 </div>

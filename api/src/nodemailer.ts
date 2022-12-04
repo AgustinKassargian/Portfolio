@@ -19,12 +19,12 @@ export const transporter = async()=>{
 } 
 
 
-export const message = async(name:string, subject: string, body:string)=>{
+export const message = async(email:string, subject: string, body:string)=>{
     const transport = await transporter()
     const sending = transport.sendMail({
         from:USER_MAIL,
         to: USER_MAIL,
-        subject: `Mensaje de ${name}. Asunto: ${subject}`,
+        subject: `Mensaje de < ${email} >. Asunto: ${subject}`,
         text: body
     })
     return

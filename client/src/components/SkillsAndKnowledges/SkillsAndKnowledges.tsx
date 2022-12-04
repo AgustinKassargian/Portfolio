@@ -1,14 +1,16 @@
 import { styles } from '../Styles'
+import {useTranslation} from 'react-i18next' 
 
 function SkillsAndKnowledges(){
+    const [t] = useTranslation("global")
     return(
         <div id='skills&kwonledges' className='pt-2'>
-            <h3 className={styles.subtitle}>Skills & Knowledges</h3>
+            <h3 className={styles.subtitle}>{t('s&k.title')}</h3>
             <div className='ml-[2.5%] w-[95%] h-[80vh] flex justify-around'>{/* Contenedor*/}
                 <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#44cfca] h-[90%] p-7'>{/* Caja databases  #009efd // #009cfd84 */}
-                    <h4 className={styles.cardTitle}>Database Skills</h4>
+                    <h4 className={styles.cardTitle}>{t('s&k.cardTitle_1')}</h4>
                     <p className={styles.cardText}>
-                        Experience with Sequelize an Non-Sequelize databases like PostgreSQL and MongoDb
+                        {t('s&k.cardText_1')}
                     </p>
                     <div className={styles.iconsContainer}>{/*ICons Container */}
                         <div className={styles.iconsBox}>{/* Icons left Box */}
@@ -22,8 +24,8 @@ function SkillsAndKnowledges(){
                     </div>
                 </div>
                 <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#494fc1] h-[90%] p-7'>{/* Caja backend #0097c5 // ##0097c587  */}
-                    <h4 className={styles.cardTitle}>Backend Skills</h4>
-                    <p className={styles.cardText}> Knowledges and practices with Node.js and Express, working with tools like Nodemailer and Cloudinary</p>
+                    <h4 className={styles.cardTitle}>{t('s&k.cardTitle_2')}</h4>
+                    <p className={styles.cardText}> {t('s&k.cardText_2')}</p>
                     <div className={styles.iconsContainer}>
                         <div className={styles.iconsBox}>
                             <img  className={styles.icons} src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs"/>
@@ -36,8 +38,8 @@ function SkillsAndKnowledges(){
                     </div>
                 </div>
                 <div className='mt-10 w-[25%] border-2 rounded-3xl bg-[#fd084a]  h-[90%] p-7'>{/* Caja frontend  #4813d0 // #4913d082 */}
-                    <h4 className={styles.cardTitle}>Frontend Skills</h4>
-                    <p className={styles.cardText}>Proficiency developing frontend using React, connecting with Redux, and providing styles with                                                                                    CSS and Tailwind</p>
+                    <h4 className={styles.cardTitle}>{t('s&k.cardTitle_3')}</h4>
+                    <p className={styles.cardText}>{t('s&k.cardText_3')}</p>
                     <div className={styles.iconsContainer}>
                         <div className={styles.iconsBox}>
                             <img className={styles.icons} src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react"/>
