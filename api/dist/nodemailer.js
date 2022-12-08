@@ -29,13 +29,13 @@ const transporter = () => __awaiter(void 0, void 0, void 0, function* () {
     return newTransport;
 });
 exports.transporter = transporter;
-const message = (email) => __awaiter(void 0, void 0, void 0, function* () {
+const message = (email, subject, body) => __awaiter(void 0, void 0, void 0, function* () {
     const transport = yield (0, exports.transporter)();
     const sending = transport.sendMail({
         from: USER_MAIL,
         to: USER_MAIL,
-        subject: email.subject,
-        text: `'Hola Agustin, recibiste un mensaje de ${email.name}. ${email.body}'`
+        subject: `Mensaje de < ${email} >. Asunto: ${subject}`,
+        text: body
     });
     return;
 });

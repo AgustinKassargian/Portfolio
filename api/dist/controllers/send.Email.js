@@ -12,10 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.postEmail = void 0;
 const nodemailer_1 = require("../nodemailer");
 const postEmail = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { email } = req.body;
+    const data = req.body;
     try {
-        (0, nodemailer_1.message)(email);
-        res.status(200).json('Submitted successfully');
+        (0, nodemailer_1.message)(data.email, data.subject, data.body);
+        return res.status(200).json('Submitted successfully');
     }
     catch (error) {
         res.status(500).json(error);

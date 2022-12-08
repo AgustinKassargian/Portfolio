@@ -19,7 +19,6 @@ const NEWLINK = `mongodb+srv://${USER_DB}:${PASSWORD_DB}@${CLUSTER}.wknn4vi.mong
 function databaseConnection() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            console.log(USER_DB);
             const connectionToDatabase = yield mongoose_1.default.connect(NEWLINK);
             console.log('Server is connected. Welcome!');
         }
