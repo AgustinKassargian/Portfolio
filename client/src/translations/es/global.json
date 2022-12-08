@@ -11,7 +11,9 @@
     "button_2": "Sobre Mi",
     "button_3": "Conocimientos y Habilidades",
     "button_4": "Proyectos",
-    "button_5": "Contacto"
+    "button_5": "Contacto",
+    "button_contrast_off":"Contraste Regular",
+    "button_contrast_on":"Contraste Elevado"
 
   },
 
@@ -35,14 +37,34 @@
   },
 
   "contact":{
-    "title": "Como Contactarme?",
-    "text":"Si te interesa contactarte conmigo, puedes enviarme un mail completando el siguiente formulario. También puedes escribirme por las siguientes redes sociales. Que tengas un buen día!",
-    "placeholder_email":"email",
-    "placeholder_subject":"subject",
-    "placeholder_body":"Leave your message here",
-    "send": "Enviar"
-  }
+    "title": "Como Contactarme",
+    "text":"Si te interesa contactarte conmigo, puedes enviarme un mail completando el siguiente formulario. También puedes escribirme por las siguientes redes sociales.",
+    "bye":"Que tengas un buen día!",
+    "placeholder_email":"Correo Electrónico",
+    "placeholder_subject":"Asunto",
+    "placeholder_body":"Deja tu mensaje aquí",
+    "send": "Enviar",
+    "donwload_button": "Descargar C.V"
+  },
 
+  "alerts":{
+    "email":{
+      "required": "*Este campo es obligatorio",
+      "minLength": "*Requiere al menos 5 characters",
+      "maxLengt": "*Máximo 40 characters",
+      "invalid": "*Email Inválido"
+    },
+    "subject":{
+      "required": "*Este campo es obligatorio",
+      "minLength":"*Requiere al menos 3 characters",
+      "maxLengt":"*Máximo 25 characters"
+    },
+    "body":{
+      "required": "*Este campo es obligatorio",
+      "minLength": "*Requiere al menos 20 characters",
+      "maxLengt": "*Máximo 200 characters"
+    }
+  }
 
 
 

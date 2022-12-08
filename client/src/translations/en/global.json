@@ -11,16 +11,18 @@
     "button_2": "About Me",
     "button_3": "Skills & Knowledges",
     "button_4": "Projects",
-    "button_5": "Contact Me"
+    "button_5": "Contact Me",
+    "button_contrast_off":"Regular Contrast",
+    "button_contrast_on":"Higher Contrast"
 
   },
 
   "about":{
     "title":"About Me",
     "line_1":"I'm from Buenos Aires, Argentina. I dream with travel around the world and improve people's lives through technology.",
-    "line_2":"I like learn and teach what I can and enjoy teamwork, contributting with ideas 💡, solutions 💪 and goods vibes ⚡️",
-    "line_3":"Recently I led the development of an application similar to an Ecommerce. Like Fullstack Developer I take part working at Backend and Frontend, but too organizing and focusing the team to reach our goals using the agile methodology Scrum.",
-    "line_4":"If you want to know me more,",
+    "line_2":"I enjoy learning and teaching useful information in my area of expertise in pursuit teamwork, contributing with ideas 💡, solutions 💪 and goods vibes ⚡️",
+    "line_3":"Recently I led the development of an application similar to an Ecommerce. Like Fullstack Developer I take part working at both, Backend and Frontend, and organizing and focusing the team to reach our goals using the agile methodology SCRUM.",
+    "line_4":"If you want to know me further, you",
     "line_5":"can click here to see what my partners think about me."
   },
 
@@ -35,13 +37,35 @@
   },
 
   "contact":{
-    "title": "How to Contact Me?",
-    "text":"If you want to put in contact with me, you can send me an email filling the next form. Also, you can write by the following social medias. Have a nice day!",
-    "placeholder_email":"email",
-    "placeholder_subject":"subject",
+    "title": "How to Contact Me",
+    "text":"If you want to put in contact with me, you can send me an email filling the next form. Also, you can write by the following social medias.",
+    "bye":" Have a nice day!",
+    "placeholder_email":"Email",
+    "placeholder_subject":"Subject",
     "placeholder_body":"Leave your message here",
-    "send": "Send"
+    "send": "Send",
+    "donwload_button": "Donwload Resume"
+  },
+
+  "alerts":{
+    "email":{
+      "required": "*This field is required",
+      "minLength": "*This field require at least 5 characters",
+      "maxLengt": "*Maximun 40 characters",   
+      "invalid": "*Invalid Email"
+    },
+    "subject":{
+      "required": "*This field is required",
+      "minLength":"*At least 3 characters",
+      "maxLengt":"*Maximun 25 characters"
+    },
+    "body":{
+      "required": "*This field is required",
+      "minLength": "*At least 20 characters",
+      "maxLengt": "*Maximun 200 characters"
+    }
   }
+
 
 
 }
