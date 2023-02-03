@@ -8,7 +8,7 @@ import {useTranslation} from 'react-i18next'
 
 import swal from 'sweetalert'
 import { styles, IStyles_Propertys } from "../Styles";
-import { ArrowDownTrayIcon } from "@heroicons/react/24/solid";
+import { DocumentArrowDownIcon } from "@heroicons/react/24/solid";
 
 
 export type Inputs = {
@@ -41,8 +41,8 @@ export default function Contact(){
     const onSubmit : SubmitHandler<Inputs> = data =>{
         dispatch(sendEmail(data))
         swal({
-            title: "Fantastic!",
-            text: "Mail sended successfully!",
+            title: `${t('contact.swal_title')}`,
+            text: `${t('contact.swal_text')}`,
             icon: "success",
             closeOnEsc:true,
         })
@@ -88,7 +88,7 @@ export default function Contact(){
                         href="Agustin Kassargian - CV.pdf"
                         download="Agustin Kassargian - CV.pdf"
                         className={actualStyle.donwload_button}> {t('contact.donwload_button')}
-                        <ArrowDownTrayIcon className='h-[3vh] w-auto ml-[2%]'/>
+                        <DocumentArrowDownIcon className='h-[3vh] w-auto ml-[2%]'/>
                         </a>
                 </div>
                 <div className="flex-col w-[50%] ">{/*MailBox */}
@@ -99,16 +99,16 @@ export default function Contact(){
                                 <p >{t('alerts.email.required')}</p>
                                 :
                                 errors?.email?.type === 'pattern'?
-                                    <p>{t('alerts.email.required')}</p>
+                                    <p>{t('alerts.email.pattern')}</p>
                                     :
                                     errors.email?.type === 'minLength' ?
                                         <p>{t('alerts.email.minLength')}</p>
                                         :
-                                        errors.email?.type === 'maxLength' ? <p>{t('alerts.email.maxLength')}</p>
+                                        errors.email?.type === 'maxLength' ?<p>{t('alerts.email.maxLength')}</p>
                                             :
                                             <br/>}
                                         </div>
-                            <input className={contrast === false ? styles.regular.inputs : styles.higher_contrast.inputs} type='text' placeholder={t('contact.placeholder_email') || 'Email'}
+                            <input className={contrast === false ? styles.regular.inputs : styles.higher_contrast.inputs} type='text' placeholder={`${t('contact.placeholder_email')}`}
                                 {...register('email',{
                                         pattern: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
                                         required:true,
@@ -122,7 +122,7 @@ export default function Contact(){
                                 <>{t('alerts.subject.required')}</>
                                 :
                                 errors?.subject?.type === 'minLength' ?
-                                    <>{t('alerts.subject.mingLength')}</>
+                                    <>{t('alerts.subject.minLength')}</>
                                     :
                                     errors?.subject?.type === 'maxLength' ?
                                         <>{t('alerts.subject.maxLength')}</>
@@ -130,11 +130,11 @@ export default function Contact(){
                                         <br/>
                             }
                             </div>
-                            <input className={contrast === false ? styles.regular.inputs : styles.higher_contrast.inputs} type='text' placeholder={t('contact.placeholder_subject') || 'Subject'}
+                            <input className={contrast === false ? styles.regular.inputs : styles.higher_contrast.inputs} type='text' placeholder={`${t('contact.placeholder_subject')}`}
                                 {...register('subject',{
                                     required:true,
                                     minLength:3,
-                                    maxLength:15
+                                    maxLength:20
                                 })}
                             />
                             <br/>
@@ -151,7 +151,7 @@ export default function Contact(){
                                         <br/>
                             }
                             </div>
-                            <textarea className={actualStyle.textarea} placeholder={t('contact.placeholder_body') || 'Body'}
+                            <textarea className={actualStyle.textarea} placeholder={`${t('contact.placeholder_body')}`}
                                 {...register('body',{
                                     required:true,
                                     minLength: 20,

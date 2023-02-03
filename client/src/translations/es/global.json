@@ -21,7 +21,7 @@
     "title":"Sobre Mi",
     "line_1":"Soy de Buenos Aires, Argentina. Sueño con viajar por el mundo y mejorar la vida de las personas a través de la tecnología.",
     "line_2":"Me gusta aprender y enseñar lo que pueda, y disfruto el trabajo en equipo, contribuyendo con ideas 💡, soluciones 💪 y buena energía ⚡️",
-    "line_3":"Recientemente lideré el desarrollo de una aplicación similar a un Comercio Online. Como Desarrollador Fullstack tome parte trabajando en Backend como Frontend, pero tambien organizando y enfocando al equipo para alcanzar nuestros objetivos mediante la metodología ágil SCRUM.",
+    "line_3":"Recientemente lideré el desarrollo de una aplicación similar a un Comercio Online. Como Desarrollador Fullstack tomé parte trabajando en Backend como Frontend, pero también organizando y enfocando al equipo para alcanzar nuestros objetivos mediante la metodología ágil SCRUM.",
     "line_4":"Si quieres conocerme más,",
     "line_5":"puedes cliquear aquí para saber que piensan mis compañeros sobre mi."
   },
@@ -31,25 +31,31 @@
     "cardTitle_1":"Conocimientos en Base de Datos",
     "cardTitle_2":"Conocimientos en Backend",
     "cardTitle_3":"Conocimientos en Frontend",
-    "cardText_1":"Experiencia con bases de datos relacionales y no relacionales, como PostgreSQL y MongoDB",
-    "cardText_2":"Conocimientos y practicas de Node.js y Express, trabajando con herramientas como Nodemailer y Cloudinary",
-    "cardText_3":"Proficiencia desarrollando front-end utilizando React, conectándolo con Redux y proveyendo estilos con CSS y Tailwind"
+    "cardText_1":"Experiencia con bases de datos relacionales y no relacionales, como PostgreSQL y MongoDB.",
+    "cardText_2":"Conocimientos y practicas de Node.js y Express, utilizando lenguajes como Javascript y Typescript.",
+    "cardText_3":"Proficiencia desarrollando front-end utilizando React, conectándolo con Redux y proveyendo estilos con CSS y Tailwind."
   },
 
+  "projects":{
+    "title":"Algunos Proyectos"
+  },
   "contact":{
     "title": "Como Contactarme",
-    "text":"Si te interesa contactarte conmigo, puedes enviarme un mail completando el siguiente formulario. También puedes escribirme por las siguientes redes sociales.",
+    "text":"Si te interesa contactarte conmigo, puedes enviarme un correo completando el siguiente formulario. También puedes escribirme por las siguientes redes sociales.",
     "bye":"Que tengas un buen día!",
     "placeholder_email":"Correo Electrónico",
     "placeholder_subject":"Asunto",
     "placeholder_body":"Deja tu mensaje aquí",
     "send": "Enviar",
-    "donwload_button": "Descargar C.V"
+    "donwload_button": "Descargar C.V",
+    "swal_title":"Fantástico",
+    "swal_text":"Correo enviado correctamente."
   },
 
   "alerts":{
     "email":{
       "required": "*Este campo es obligatorio",
+      "pattern": "Correo Inválido",
       "minLength": "*Requiere al menos 5 characters",
       "maxLengt": "*Máximo 40 characters",
       "invalid": "*Email Inválido"

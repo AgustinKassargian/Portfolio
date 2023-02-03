@@ -36,15 +36,21 @@
     "cardText_3":"Proficiency developing frontend using React, connecting with Redux, and providing styles with CSS and Tailwind"
   },
 
+  "projects":{
+    "title": "Some Projects"
+  },
+
   "contact":{
     "title": "How to Contact Me",
-    "text":"If you want to put in contact with me, you can send me an email filling the next form. Also, you can write by the following social medias.",
+    "text":"If you want to contact me, you can mail me filling the next form. Also, you can write by the following social medias.",
     "bye":" Have a nice day!",
     "placeholder_email":"Email",
     "placeholder_subject":"Subject",
     "placeholder_body":"Leave your message here",
     "send": "Send",
-    "donwload_button": "Donwload Resume"
+    "donwload_button": "Download Resume",
+    "swal_title":"Fantastic",
+    "swal_text":"Sended succesfully."
   },
 
   "alerts":{
@@ -57,7 +63,7 @@
     "subject":{
       "required": "*This field is required",
       "minLength":"*At least 3 characters",
-      "maxLengt":"*Maximun 25 characters"
+      "maxLength":"*Maximun 25 characters"
     },
     "body":{
       "required": "*This field is required",

@@ -1,11 +1,11 @@
-import React from 'react';
-
 
 import NavBar from '../NavBar/NavBar';
 import AboutMe from '../About Me/About'
-import Projects from '../Projects/Projects';
+import Projects from '../Projects/_Projects';
 import Contact from '../Contact Me/Contact';
 import SkillsAndKnowledges from '../SkillsAndKnowledges/SkillsAndKnowledges';
+
+import photo from '../Multimedia/Profile.png'
 
 import {useEffect} from 'react';
 import { useAppDispatch, useAppSelector } from '../Redux/hooks';
@@ -39,12 +39,12 @@ function Home(){
               </h1>
               <h2 className='text-3xl font-bold pb-10 flex justify-center'>
                 {t("home.subtitle_1")} 
-                  <span className='text-primary ml-2 mr-2'>{t("home.subtitle_and")}</span> 
+                  <span className={actualStyle.home_subtitle_and}>{t("home.subtitle_and")}</span> 
                 {t("home.subtitle_2")}
               </h2>
             </div>
             <div className='w-[50%]'>{/* caja derecha*/}
-            <>Fotito</>
+              <img src={photo} alt='photo' className={actualStyle.home_img}/>
           </div>
             </div>
           <NavBar/>
