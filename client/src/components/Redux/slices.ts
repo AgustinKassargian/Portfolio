@@ -17,6 +17,7 @@ const initialState : mailState ={
 export const sendEmail = createAsyncThunk('email/sendEmail',
     async(payload: Inputs)=>{
         try {
+            if (window.location.href.slice(0, 16) !== "http://localhost") return await axios.post('https://portfolio-backend-pn03.onrender.com/api/email', payload)
             return await axios.post('http://localhost:3001/api/email', payload)
         } catch (error) {
             throw new Error(`${error}`)
