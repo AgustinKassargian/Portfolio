@@ -32,7 +32,7 @@
     "cardTitle_2":"Backend Skills",
     "cardTitle_3":"Frontend Skills",
     "cardText_1":"Experience with Sequelize an Non-Sequelize databases like PostgreSQL and MongoDb",
-    "cardText_2":"Knowledges and practices with Node.js and Express, working with tools like Nodemailer and Cloudinary",
+    "cardText_2":"Knowledges and practices with Node.js and Express, working with languages like JavaScript and TypeScript",
     "cardText_3":"Proficiency developing frontend using React, connecting with Redux, and providing styles with CSS and Tailwind"
   },
 
